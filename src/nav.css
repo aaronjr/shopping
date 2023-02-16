@@ -70,6 +70,12 @@ a:visited{
 
 .amount{
   position: absolute;
-  bottom: -10px;
-  right: -10px;
+  padding: 5px;
+  bottom: -5px;
+  right: -12px;
+  border: none;
+  border-radius:50%;
+  background-color: #354147;
+  color: white;
+  font-size: medium;
 }

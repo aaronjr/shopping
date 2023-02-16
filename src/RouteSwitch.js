@@ -10,7 +10,7 @@ import { allColours } from "./Colours";
 
 const RouteSwitch = () => {
   const [colours, setColours] = useState(allColours);
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useState(allColours);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -18,7 +18,7 @@ const RouteSwitch = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/shop" element={<Shop colours={colours} />} />
-        <Route path="/basket" element={<Basket />} />
+        <Route path="/basket" element={<Basket basket={basket} />} />
       </Routes>
       <Footer />
     </BrowserRouter>

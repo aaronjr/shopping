@@ -1,9 +1,10 @@
 import React from "react";
 import paint from "./paint.avif"
 
+
 const Shop = (props) => {
   return (
-    <div className="shop">
+    <div className="main">
       <div className="hero">
         <div className="textHolder">
           <h1 className="header">Trending colours</h1>

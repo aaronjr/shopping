@@ -46,7 +46,7 @@ export const allColours = [
     src: lightBlue,
     name: "See through blue",
     price: "6.00",
-    size: "1 Litres",
+    size: "1",
   },
   {
     src: lightGreen,

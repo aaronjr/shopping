@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import * as React from "react";
 import { Logo } from "./logo"
 import "./nav.css";
+import Icon from "@mdi/react";
+import { mdiBasketOutline, mdiPrinterPos } from "@mdi/js";
 
-const Nav = () => {
+
+const Nav = (props) => {
   return (
     <div className="navbar">
       <Logo />
@@ -14,8 +17,13 @@ const Nav = () => {
         <li className="list-item">
           <Link to={"/Shop"}>Shop</Link>
         </li>
-        <li className="list-item">
-          <Link to={"/Basket"}>Basket</Link>
+        <li className="list-item basketIcon">
+          <Link to={"/Basket"}>
+            <Icon path={mdiBasketOutline} size={1.5} />
+            <p className="amount">
+              {props.basket.length !== 0 && props.basket.length}
+            </p>
+          </Link>
         </li>
       </ul>
     </div>

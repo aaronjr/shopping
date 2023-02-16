@@ -4,8 +4,7 @@ export const Logo = () => {
   
   return(
     <svg
-      data-testid="icon-svg-logo"
-      class="sc-f437bde2-13 ieHlLQ"
+      class="logo"
       viewBox="0 0 140 50"
       height="50"
       width="140"

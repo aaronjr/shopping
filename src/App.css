@@ -8,73 +8,106 @@
   color: #354147;
 }
 
-#root{
+#root
+{
   display: flex;
   flex-direction: column;
   background-color: rgb(244, 244, 244);
 }
-.textHolder{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.textHolder p{
-  display: flex;
-  align-self: flex-end;
-  width: 80%;
-  text-align: right;
+.logo{
+  margin: 15px;
 }
-.header{
-  text-align: right;
-  font-weight: 400;
-  margin-bottom: 25px;
-}
-.shop{
+.main
+{
   width: 80%;
   padding: 25px 50px;
   align-self: center;
   background-color: white;
   margin: 40px 0px;
 }
-
-.colours{
-  width: 200px;
-}
-
-.colourHolder{
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
-}
-
-.square{
-  display: grid;
-  place-items: center;
-}
-
-.colourItem{
-  font-family: 'IBM Plex Mono', monospace;
-  justify-self: flex-start;
-  margin: 10px 10px 0px calc((100% - 200px) / 2);
-}
-
-.hero{
+.heroMain
+{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
   margin: 1rem;
   margin-bottom: 3rem;
-  padding-bottom: 25px;
-  border-bottom: solid rgb(244, 244, 244) 50px;
 }
 
-.imgHolder{
+.textHolderMain{
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #354147;
+  justify-self: flex-end;
+}
+
+.headerMain{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.interior
+{
+  width: 100%;
+}
+
+.textHolderMain p
+{
+  display: flex;
+  align-self: center;
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: small;
+}
+
+.buttonHolder{
+  margin: 30px;
+  align-self: center;
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.button{
   display: grid;
-  justify-content: flex-start;
+  place-items: center;
+  color: #354147;
+  background-color: white;
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: .5rem;
+}
+
+.mainIconHolder{
+  display: flex;
+  justify-content: space-evenly;
+  gap:150px;
+  padding: 0px 100px;
+  margin-bottom: 25px;
+}
+.iconEach{
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.paint{
-  width: 80%;
+.iconEach h5
+{
+  font-size: large;
+  margin-top: 10px;
+  text-align: center;
+}
+.iconEach p {
+  font-size: small;
+  margin-top: 10px;
+  text-align: center;
+}
+.iconsMain
+{
+  width: 150px;
 }

@@ -74,7 +74,7 @@ export const allColours = [
   },
   {
     src: red,
-    name: "In trouble",
+    name: "In trouble red",
     price: "20.00",
     size: "1",
   },

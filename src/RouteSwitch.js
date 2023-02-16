@@ -5,6 +5,7 @@ import App from "./App";
 import Shop from "./Shop";
 import Basket from "./Basket";
 import Nav from "./Nav";
+import { Footer } from "./Footer";
 import { allColours } from "./Colours";
 
 const RouteSwitch = () => {
@@ -18,6 +19,7 @@ const RouteSwitch = () => {
           <Route path="/shop" element={<Shop colours={colours} />} />
           <Route path="/basket" element={<Basket />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
   );
 };

@@ -1,13 +1,12 @@
 .navbar{
   display: flex;
-  justify-content: space-evenly;
-  padding: 40px 100px;
+  justify-content: space-between;
+    padding: 40px 7%;
   background-color: rgb(252, 252, 252);
-  border-bottom: solid rgb(244, 244, 244) 5px;
 }
 .nav-list{
   display: flex;
-  gap: 10px;
+  gap: 70px;
   align-items: center;
 }
 
@@ -17,9 +16,47 @@
   font-weight: 600;
   color: #354147;
 }
+
 a{
   text-decoration: none;
 }
 a:visited{
   color: #354147;
+}
+
+.footer{
+  background-color: rgb(252, 252, 252);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.list{
+  margin: 30px;
+  margin-top: 50px;
+  display: flex;
+  gap:30px;
+}
+
+.footer-item{
+  list-style-type: none;
+}
+
+.footer-item:hover{
+  cursor: pointer;
+  color: rgb(77, 101, 140);
+}
+
+.act, 
+.cert{
+  background-color: #354147;
+  height: 90px;
+  padding: 10px
+}
+
+.otherLogos{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
 }

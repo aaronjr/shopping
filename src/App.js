@@ -1,10 +1,9 @@
-import yellow from "./colours/yellow.webp"
+import "./App.css";
 
 const App = () => {
   return (
     <div>
       <h1>Hello from Home</h1>
-      <img src={yellow} alt="yellow block" />
     </div>
   );
 };

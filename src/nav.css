@@ -1,0 +1,25 @@
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 100px;
+  background-color: rgb(252, 252, 252);
+  border-bottom: solid rgb(244, 244, 244) 5px;
+}
+.nav-list{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.list-item{
+  list-style-type: none;
+  font-size: x-large;
+  font-weight: 600;
+  color: #354147;
+}
+a{
+  text-decoration: none;
+}
+a:visited{
+  color: #354147;
+}

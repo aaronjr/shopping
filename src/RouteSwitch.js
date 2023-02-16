@@ -13,15 +13,15 @@ const RouteSwitch = () => {
   const [basket, setBasket] = useState([]);
 
   return (
-      <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Nav basket={basket} />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/shop" element={<Shop colours={colours} />} />
-          <Route path="/basket" element={<Basket />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/shop" element={<Shop colours={colours} />} />
+        <Route path="/basket" element={<Basket />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 };
 

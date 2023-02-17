@@ -1,13 +1,16 @@
 import React from "react";
-import "./basket.css"
+import "./basket.css";
 
 const Basket = (props) => {
   return (
     <div className="main">
-      <h1>Your basket</h1>
+      <h1 className="basketHeader">Your basket</h1>
       <div>
-        {
-          props.basket.map(item => {
+        {props.basket
+          .sort((a, b) => {
+            return parseInt(a.price) > parseInt(b.price) ? 1 : -1;
+          })
+          .map((item) => {
             return (
               <div className="basketItem" key={item.src}>
                 <img className="basketImg" src={item.src} alt={item.name} />
@@ -19,7 +22,7 @@ const Basket = (props) => {
                 </div>
                 <div className="amountHolder">
                   <div className="amountControl">-</div>
-                  <div className="amountControl number">0</div>
+                  <div className="amountControl number">{item.order}</div>
                   <div className="amountControl">+</div>
                 </div>
                 <div>
@@ -27,8 +30,7 @@ const Basket = (props) => {
                 </div>
               </div>
             );
-          })
-        }
+          })}
       </div>
     </div>
   );

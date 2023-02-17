@@ -3,7 +3,7 @@ import * as React from "react";
 import { Logo } from "./logo"
 import "./nav.css";
 import Icon from "@mdi/react";
-import { mdiBasketOutline, mdiPrinterPos } from "@mdi/js";
+import { mdiBasketOutline } from "@mdi/js";
 
 
 const Nav = (props) => {

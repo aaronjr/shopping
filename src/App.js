@@ -2,7 +2,7 @@ import "./App.css";
 import "./shop.css";
 import { Link } from "react-router-dom";
 import interior from "./interior.avif";
-import eco from "./eco.svg"
+import eco from "./eco.svg";
 import fairy from "./fairy.svg";
 import heart from "./heart.svg";
 
@@ -24,9 +24,8 @@ const App = () => {
             </Link>
 
             <Link to={"/Basket"}>
-              <div className="button">Buy moss green</div>
+              <div className="button">Buy Moss green</div>
             </Link>
-
           </div>
         </div>
         <img className="interior" src={interior} alt="Modern front room" />

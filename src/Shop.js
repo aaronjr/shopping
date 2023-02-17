@@ -1,5 +1,6 @@
 import React from "react";
 import paint from "./paint.avif"
+import { Link } from "react-router-dom";
 
 
 const Shop = (props) => {
@@ -23,13 +24,15 @@ const Shop = (props) => {
       <div className="colourHolder">
         {props.colours.map((colour) => {
           return (
-            <div key={colour.src} className="square">
-              <img className="colours" src={colour.src} alt={colour.name} />
-              <p className="colourItem">{colour.name}</p>
-              <p className="colourItem">
-                £{colour.price} &#183; {colour.size}L
-              </p>
-            </div>
+            <Link to={`/Shop/${colour.id}`} key={colour.id}>
+              <div className="square">
+                <img className="colours" src={colour.src} alt={colour.name} />
+                <p className="colourItem">{colour.name}</p>
+                <p className="colourItem">
+                  £{colour.price} &#183; {colour.size}L
+                </p>
+              </div>
+            </Link>
           );
         })}
       </div>

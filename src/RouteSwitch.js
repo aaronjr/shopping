@@ -15,32 +15,41 @@ const RouteSwitch = () => {
   const [basket, setBasket] = useState([]);
 
   const addToBasket = (id) => {
-
-    const item = colours.filter(colour => {
-      return colour.id === id
-    })
-
-    const improvedItem = item[0]
-    improvedItem.order = 1;
-    // item with an order number of 1
-    
-    const duplicate = basket.filter((item) => {
-      return item.id === improvedItem.id;
-    });
-    
-    const noDuplicate = basket.filter((item) => {
-      return item.id !== improvedItem.id;
+    const item = colours.filter((colour) => {
+      return colour.id === id;
     });
 
-    if (duplicate[0] !== undefined) {
-      console.log("match");
-      let improvedDup = duplicate[0];
-      improvedDup.order++
-      setBasket([...noDuplicate, improvedDup]);
+    const newItem = item[0];
+
+    // check for a matching item
+    if (basket.some((item) => item.id === newItem.id)) {
+      // update basket
+      setBasket((basket) =>
+        basket.map((basketItem) =>
+          // find the correct item
+          basketItem.id === newItem.id
+            ? {
+              // spread the item and change amount
+                ...basketItem,
+                amount: basketItem.amount + 1,
+              }
+            : basketItem
+          // if no match - leave as is
+        )
+      );
+      return;
     } else {
-      console.log("no match");
-      setBasket([...basket, improvedItem]);
+      // Add to cart if no match
+      setBasket((basket) => [
+      // spread basket and add to it
+        ...basket,
+        { ...newItem, amount: 1 }, // <-- initial amount 1
+      ]);
     }
+  }
+
+  const changeAmount = (id, choice) => {
+    console.log(id, choice)
   }
 
   return (
@@ -53,7 +62,10 @@ const RouteSwitch = () => {
           path="/shop/:id"
           element={<Item onClick={addToBasket} colours={colours} />}
         />
-        <Route path="/basket" element={<Basket basket={ basket} />} />
+        <Route
+          path="/basket"
+          element={<Basket basket={basket} handleChange={changeAmount} />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -12,7 +12,7 @@ const Basket = (props) => {
             return (
               <div className="basketItem" key={item.src}>
                 <Link to={`/shop/${item.id}`}>
-                <img className="basketImg" src={item.src} alt={item.name} />
+                  <img className="basketImg" src={item.src} alt={item.name} />
                 </Link>
                 <div className="basketDetails">
                   <p>{item.name}</p>
@@ -21,12 +21,22 @@ const Basket = (props) => {
                   </p>
                 </div>
                 <div className="amountHolder">
-                  <div className="amountControl">-</div>
-                  <div className="amountControl number">{item.order}</div>
-                  <div className="amountControl">+</div>
+                  <button
+                    onClick={() => props.handleChange(item.id, "remove")}
+                    className="amountControl"
+                  >
+                    -
+                  </button>
+                  <div className="amountControl number">{item.amount}</div>
+                  <button
+                    onClick={() => props.handleChange(item.id, "add")}
+                    className="amountControl"
+                  >
+                    +
+                  </button>
                 </div>
                 <div>
-                  <p className="itemCost">£{item.price * item.order}</p>
+                  <p className="itemCost">£{item.price * item.amount}</p>
                 </div>
               </div>
             );

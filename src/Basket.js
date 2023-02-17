@@ -1,5 +1,6 @@
 import React from "react";
 import "./basket.css";
+import { Link } from "react-router-dom";
 
 const Basket = (props) => {
   return (
@@ -7,13 +8,12 @@ const Basket = (props) => {
       <h1 className="basketHeader">Your basket</h1>
       <div>
         {props.basket
-          .sort((a, b) => {
-            return parseInt(a.price) > parseInt(b.price) ? 1 : -1;
-          })
           .map((item) => {
             return (
               <div className="basketItem" key={item.src}>
+                <Link to={`/shop/${item.id}`}>
                 <img className="basketImg" src={item.src} alt={item.name} />
+                </Link>
                 <div className="basketDetails">
                   <p>{item.name}</p>
                   <p>
@@ -26,7 +26,7 @@ const Basket = (props) => {
                   <div className="amountControl">+</div>
                 </div>
                 <div>
-                  <p className="itemCost">£{item.price}</p>
+                  <p className="itemCost">£{item.price * item.order}</p>
                 </div>
               </div>
             );

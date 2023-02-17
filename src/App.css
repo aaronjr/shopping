@@ -20,6 +20,7 @@
 }
 .main
 {
+  min-height: 38vh;
   width: 80%;
   padding: 25px 50px;
   align-self: center;

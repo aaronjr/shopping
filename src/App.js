@@ -23,7 +23,7 @@ const App = () => {
               <div className="button">Shop all paint</div>
             </Link>
 
-            <Link to={"/Basket"}>
+            <Link to={"/shop/6"}>
               <div className="button">Buy Moss green</div>
             </Link>
           </div>

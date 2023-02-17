@@ -12,7 +12,9 @@ const Nav = (props) => {
       <Logo />
       <ul className="nav-list">
         <li className="list-item">
-          <Link to={"/"}>Home</Link>
+          <Link to={"/"}>
+            Home
+          </Link>
         </li>
         <li className="list-item">
           <Link to={"/Shop"}>Shop</Link>

@@ -22,14 +22,14 @@ const Basket = (props) => {
                 </div>
                 <div className="amountHolder">
                   <button
-                    onClick={() => props.handleChange(item.id, "remove")}
+                    onClick={() => props.reduceAmount(item.id)}
                     className="amountControl"
                   >
                     -
                   </button>
                   <div className="amountControl number">{item.amount}</div>
                   <button
-                    onClick={() => props.handleChange(item.id, "add")}
+                    onClick={() => props.increaseAmount(item.id)}
                     className="amountControl"
                   >
                     +

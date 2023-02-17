@@ -48,9 +48,57 @@ const RouteSwitch = () => {
     }
   }
 
-  const changeAmount = (id, choice) => {
-    console.log(id, choice)
+  const reduceAmount = (id) => {
+    const itemz = colours.filter((colour) => {
+      return colour.id === id;
+    });
+
+    const newItem = itemz[0];
+
+    if (basket.some((item) => item.id === newItem.id)) {
+        setBasket((basket) =>
+          basket.map(
+            (basketItem) =>
+              // find the correct item
+              basketItem.id === newItem.id && basketItem.amount > 1
+                ? {
+                    // spread the item and change amount
+                    ...basketItem,
+                    amount: basketItem.amount - 1,
+                  }
+                : basketItem
+            // if no match - leave as is
+          )
+        );
+        return;
+    }
   }
+
+  const increaseAmount = (id) => {
+    const item = colours.filter((colour) => {
+      return colour.id === id;
+    });
+
+    const newItem = item[0];
+
+    if (basket.some((item) => item.id === newItem.id)) {
+      setBasket((basket) =>
+        basket.map(
+          (basketItem) =>
+            // find the correct item
+            basketItem.id === newItem.id
+              ? {
+                  // spread the item and change amount
+                  ...basketItem,
+                  amount: basketItem.amount + 1,
+                }
+              : basketItem
+          // if no match - leave as is
+        )
+      );
+      return;
+    }
+  };
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -64,7 +112,13 @@ const RouteSwitch = () => {
         />
         <Route
           path="/basket"
-          element={<Basket basket={basket} handleChange={changeAmount} />}
+          element={
+            <Basket
+              basket={basket}
+              reduceAmount={reduceAmount}
+              increaseAmount={increaseAmount}
+            />
+          }
         />
       </Routes>
       <Footer />

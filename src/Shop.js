@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import paint from "./paint.avif"
 import { Link } from "react-router-dom";
 
-
 const Shop = (props) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <div className="main">
       <div className="hero">

@@ -4,10 +4,14 @@ import arrow from "./arrow.svg"
 import flowers from "./flowers.svg";
 import fairy from "./fairy.svg";
 import durable from "./durable.svg";
-import { Link, useMatch } from "react-router-dom";
+import { useMatch } from "react-router-dom";
 
 const Item = (props) => {
   const [item, setItem] = useState([]);
+
+   useEffect(() => {
+     window.scrollTo(0, 0);
+   });
 
   const id = useMatch("/shop/:id").params.id;
 

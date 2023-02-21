@@ -10,6 +10,7 @@ import Nav from "./Nav";
 import { Footer } from "./Footer";
 import { allColours } from "./Colours";
 
+
 const RouteSwitch = () => {
   const [colours, setColours] = useState([]);
   const [basket, setBasket] = useState([]);
@@ -97,6 +98,10 @@ const RouteSwitch = () => {
           })
     );
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
 
   useEffect(() => {
     const sortedColours = [...allColours].sort((a, b) => {

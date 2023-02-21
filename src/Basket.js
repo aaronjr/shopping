@@ -1,6 +1,8 @@
 import React from "react";
 import "./basket.css";
 import { Link } from "react-router-dom";
+import Icon from "@mdi/react";
+import { mdiDelete } from "@mdi/js";
 
 const Basket = (props) => {
   return (
@@ -21,12 +23,21 @@ const Basket = (props) => {
                   </p>
                 </div>
                 <div className="amountHolder">
-                  <button
-                    onClick={() => props.reduceAmount(item.id)}
-                    className="amountControl"
-                  >
-                    -
-                  </button>
+                  {item.amount !== 1 ? (
+                    <button
+                      onClick={() => props.reduceAmount(item.id)}
+                      className="amountControl"
+                    >
+                      -
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => props.removeItem(item.id)}
+                      className="amountControl"
+                    >
+                      <Icon path={mdiDelete} size={1} />
+                    </button>
+                  )}
                   <div className="amountControl number">{item.amount}</div>
                   <button
                     onClick={() => props.increaseAmount(item.id)}

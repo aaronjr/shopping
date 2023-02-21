@@ -1,0 +1,52 @@
+.basketHeader{
+  margin: 30px;
+}
+
+.basketItem{
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 5fr 1fr;
+  align-items: center;
+  margin: 30px;
+  border-top: dashed rgb(129, 129, 129) 2px;
+  border-bottom: dashed rgb(129, 129, 129) 2px;
+}
+
+.basketImg{
+  width: 150px
+}
+
+.basketDetails{
+  margin-left: 25px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: large;
+}
+
+.amountHolder{
+  place-self: center;
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+}
+
+.amountControl{
+  font-size: large;
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(226, 139, 139);
+}
+.amountControl:first-child
+{
+  background-color: rgb(249, 224, 224);
+}
+.number{
+  background-color: white;
+}
+
+.itemCost{
+  font-size: x-large;
+}

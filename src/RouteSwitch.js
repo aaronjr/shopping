@@ -66,12 +66,22 @@ const RouteSwitch = () => {
                     ...basketItem,
                     amount: basketItem.amount - 1,
                   }
-                : basketItem
-            // if no match - leave as is
+                : 
+                basketItem
           )
         );
         return;
     }
+  }
+
+  const removeItem = (id) => { 
+    setBasket((basket) =>
+      basket.filter((basketItem) =>
+        // find the correct item
+        basketItem.id !== id
+      )
+    );
+    return;
   }
 
   const increaseAmount = (id) => {
@@ -115,6 +125,7 @@ const RouteSwitch = () => {
           element={
             <Basket
               basket={basket}
+              removeItem={removeItem}
               reduceAmount={reduceAmount}
               increaseAmount={increaseAmount}
             />

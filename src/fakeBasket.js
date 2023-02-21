@@ -17,20 +17,20 @@ export const FakeBasket = [
     name: "Baby blue",
     price: "5.00",
     size: "1",
-    order: 3,
+    amount: 3,
   },
   {
     src: brick,
     name: "Orange brick",
     price: "3.00",
     size: "1",
-    order: 0,
+    amount: 4,
   },
   {
     src: darkBlue,
     name: "Royal blue",
     price: "10.00",
     size: "1.5",
-    order: 0,
+    amount: 1,
   },
 ];

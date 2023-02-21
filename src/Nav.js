@@ -12,9 +12,7 @@ const Nav = (props) => {
       <Logo />
       <ul className="nav-list">
         <li className="list-item">
-          <Link to={"/"}>
-            Home
-          </Link>
+          <Link to={"/"}>Home</Link>
         </li>
         <li className="list-item">
           <Link to={"/Shop"}>Shop</Link>
@@ -22,9 +20,9 @@ const Nav = (props) => {
         <li className="list-item basketIcon">
           <Link to={"/Basket"}>
             <Icon path={mdiBasketOutline} size={1.5} />
-            {props.basket.length !== 0 && 
-              <p className="amount">{props.basket.length}</p>
-              }
+            {props.itemCount !== 0 && (
+              <p className="amount">{props.itemCount}</p>
+            )}
           </Link>
         </li>
       </ul>

@@ -5,7 +5,7 @@ import App from "./App";
 import Shop from "./Shop";
 import Basket from "./Basket";
 import Item from "./Item.js"
-// import {FakeBasket} from "./fakeBasket";
+import {FakeBasket} from "./fakeBasket";
 import Nav from "./Nav";
 import { Footer } from "./Footer";
 import { allColours } from "./Colours";
@@ -13,6 +13,8 @@ import { allColours } from "./Colours";
 const RouteSwitch = () => {
   const [colours] = useState(allColours);
   const [basket, setBasket] = useState([]);
+  const [itemCount, setItemCount] = useState(0);
+  const [basketTotal, setBasketTotal] = useState(0);
 
   const addToBasket = (id) => {
     const item = colours.filter((colour) => {
@@ -25,15 +27,16 @@ const RouteSwitch = () => {
     if (basket.some((item) => item.id === newItem.id)) {
       // update basket
       setBasket((basket) =>
-        basket.map((basketItem) =>
-          // find the correct item
-          basketItem.id === newItem.id
-            ? {
-              // spread the item and change amount
-                ...basketItem,
-                amount: basketItem.amount + 1,
-              }
-            : basketItem
+        basket.map(
+          (basketItem) =>
+            // find the correct item
+            basketItem.id === newItem.id
+              ? {
+                  // spread the item and change amount
+                  ...basketItem,
+                  amount: basketItem.amount + 1,
+                }
+              : basketItem
           // if no match - leave as is
         )
       );
@@ -41,12 +44,12 @@ const RouteSwitch = () => {
     } else {
       // Add to cart if no match
       setBasket((basket) => [
-      // spread basket and add to it
+        // spread basket and add to it
         ...basket,
         { ...newItem, amount: 1 }, // <-- initial amount 1
       ]);
     }
-  }
+  };
 
   const reduceAmount = (id) => {
     const itemz = colours.filter((colour) => {
@@ -56,33 +59,47 @@ const RouteSwitch = () => {
     const newItem = itemz[0];
 
     if (basket.some((item) => item.id === newItem.id)) {
-        setBasket((basket) =>
-          basket.map(
-            (basketItem) =>
-              // find the correct item
-              basketItem.id === newItem.id && basketItem.amount > 1
-                ? {
-                    // spread the item and change amount
-                    ...basketItem,
-                    amount: basketItem.amount - 1,
-                  }
-                : 
-                basketItem
-          )
-        );
-        return;
+      setBasket((basket) =>
+        basket.map((basketItem) =>
+          // find the correct item
+          basketItem.id === newItem.id && basketItem.amount > 1
+            ? {
+                // spread the item and change amount
+                ...basketItem,
+                amount: basketItem.amount - 1,
+              }
+            : basketItem
+        )
+      );
+      return;
     }
-  }
+  };
 
-  const removeItem = (id) => { 
+  const removeItem = (id) => {
     setBasket((basket) =>
-      basket.filter((basketItem) =>
-        // find the correct item
-        basketItem.id !== id
+      basket.filter(
+        (basketItem) =>
+          // find the correct item
+          basketItem.id !== id
       )
     );
     return;
-  }
+  };
+
+  //FakeBasket back to basket
+  useEffect(() => {
+    setItemCount(
+      basket.reduce((a, b) => {
+        return a + b.amount;
+      }, 0)
+    );
+
+    setBasketTotal(
+      basket.reduce((a, b) => {
+        return a + b.price * b.amount;
+      }, 0)
+    );
+  }, [basket]);
 
   const increaseAmount = (id) => {
     const item = colours.filter((colour) => {
@@ -112,7 +129,7 @@ const RouteSwitch = () => {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Nav basket={basket} />
+      <Nav itemCount={itemCount} />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/shop" element={<Shop colours={colours} />} />
@@ -125,6 +142,7 @@ const RouteSwitch = () => {
           element={
             <Basket
               basket={basket}
+              basketTotal={basketTotal}
               removeItem={removeItem}
               reduceAmount={reduceAmount}
               increaseAmount={increaseAmount}

@@ -3,10 +3,10 @@ import "./basket.css";
 import { Link } from "react-router-dom";
 import Icon from "@mdi/react";
 import { mdiDelete } from "@mdi/js";
+import emptyBasket from "./emptyBasket.svg";
 
 const Basket = (props) => {
-  return (
-    props.basketTotal !== 0 ? (
+  return props.basketTotal !== 0 ? (
     <div className="main">
       <h1 className="basketHeader">Your basket</h1>
       <div className="basketFull">
@@ -69,10 +69,23 @@ const Basket = (props) => {
         </div>
       </div>
     </div>
-    ) :
-      <div className="main">
-        
-     </div>
+  ) : (
+    <div className="main emptyMain">
+      <div className="emptyBasketHolder">
+        <img
+          className="emptyBasketImage"
+          src={emptyBasket}
+          alt="empty basket"
+        />
+        <h3 className="emptyBasketH3">Your basket is empty.</h3>
+        <p className="emptyBasketP">
+          Hmm… it looks like you haven’t added anything to your basket yet.
+        </p>
+        <Link className="emptyButtonLink" to={"/shop"}>
+          <p className="emptyButton">Shop paint</p>
+        </Link>
+      </div>
+    </div>
   );
 };
 

@@ -105,3 +105,47 @@
   box-shadow: 5px 5px 5px grey;
   grid-column: span 2;
 }
+
+
+/* empty basket section */
+
+.emptyBasketHolder{
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyBasketImage{
+  width: 30%;
+  align-self: center;
+}
+
+.emptyBasketH3{
+  text-align: center;
+  font-size: 3rem;
+}
+.emptyBasketP{
+  text-align: center;
+    font-size: 1rem;
+    margin: 15px;
+}
+
+.emptyButtonLink{
+  align-self: center;
+}
+
+.emptyButton{
+  place-self: center;
+ text-align: center;
+  width: 150px;
+  height: 70px; 
+  display: grid;
+  place-items: center;
+  color: white;
+  background-color: #354147;
+  border-radius: .5rem;
+  font-size: large;
+}
+
+.emptyMain{
+  padding-top: 0;
+}

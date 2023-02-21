@@ -70,12 +70,16 @@ a:visited{
 
 .amount{
   position: absolute;
+  min-height: 18.5px;
+  aspect-ratio: 1/1;
   padding: 5px;
   bottom: -5px;
   right: -12px;
   border: none;
-  border-radius:50%;
+  border-radius: 50%;
   background-color: #354147;
   color: white;
   font-size: medium;
+  display: grid;
+  place-items: center;
 }

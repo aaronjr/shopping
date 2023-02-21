@@ -41,10 +41,11 @@ export const allColours = [
   },
   {
     src: darkPink,
-    name: "Boss ass pink",
+    name: "Dusty rose",
     price: "7.00",
     size: "1",
-    description: "",
+    description:
+      "Pink 11 falls on the darker side of pink, a dusty rose paint with plenty of warmth and a whole load of soothing lilac undertones. The crisp matt finish is just as smooth, and works wonders at ensuring even coverage on walls with imperfections.",
     id: 3,
   },
   {

@@ -21,6 +21,13 @@ const Shop = (props) => {
           <img className="paint" src={paint} alt="Blob of paint" />
         </div>
       </div>
+      <div className="filter">
+        <p>Sort by</p>
+        <select onChange={(event) => props.selectChange(event.target.value)}>
+          <option value="Descending">Descending</option>
+          <option value="Ascending">Ascending</option>
+        </select>
+      </div>
       <div className="colourHolder">
         {props.colours.map((colour) => {
           return (

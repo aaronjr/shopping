@@ -5,13 +5,13 @@ import App from "./App";
 import Shop from "./Shop";
 import Basket from "./Basket";
 import Item from "./Item.js"
-import {FakeBasket} from "./fakeBasket";
+// import {FakeBasket} from "./fakeBasket";
 import Nav from "./Nav";
 import { Footer } from "./Footer";
 import { allColours } from "./Colours";
 
 const RouteSwitch = () => {
-  const [colours] = useState(allColours);
+  const [colours, setColours] = useState([]);
   const [basket, setBasket] = useState([]);
   const [itemCount, setItemCount] = useState(0);
   const [basketTotal, setBasketTotal] = useState(0);
@@ -86,7 +86,26 @@ const RouteSwitch = () => {
     return;
   };
 
-  //FakeBasket back to basket
+  const selectChange = (sort) => {
+    setColours(([...colurs]) =>
+      sort === "Descending"
+        ? colurs.sort((a, b) => {
+            return a.price - b.price;
+          })
+        : colurs.sort((a, b) => {
+            return b.price - a.price;
+          })
+    );
+  }
+
+  useEffect(() => {
+    const sortedColours = [...allColours].sort((a, b) => {
+      return a.price - b.price;
+    });
+
+    setColours(sortedColours);
+  }, [])
+  
   useEffect(() => {
     setItemCount(
       basket.reduce((a, b) => {
@@ -96,7 +115,7 @@ const RouteSwitch = () => {
 
     setBasketTotal(
       basket.reduce((a, b) => {
-        return a + b.price * b.amount;
+        return a + (b.price * b.amount);
       }, 0)
     );
   }, [basket]);
@@ -132,7 +151,10 @@ const RouteSwitch = () => {
       <Nav itemCount={itemCount} />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/shop" element={<Shop colours={colours} />} />
+        <Route
+          path="/shop"
+          element={<Shop colours={colours} selectChange={selectChange} />}
+        />
         <Route
           path="/shop/:id"
           element={<Item onClick={addToBasket} colours={colours} />}

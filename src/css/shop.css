@@ -7,13 +7,13 @@
 .textHolder p{
   display: flex;
   align-self: flex-end;
-  width: 80%;
-  text-align: right;
+  text-align: center;
 }
+
 .header{
-  text-align: right;
-  font-weight: 400;
-  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .colours{
@@ -22,9 +22,11 @@
 
 .colourHolder{
   display: grid;
+  justify-content: center;
   gap: 30px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
   grid-auto-rows: 1fr;
+  padding-bottom: 20px;
 }
 
 .square{
@@ -49,10 +51,10 @@
 .imgHolder{
   display: grid;
   justify-content: flex-start;
-  align-items: center;
+  place-items: center;
 }
 .paint{
-  width: 90%;
+  width: 100%;
 }
 
 .filter{
@@ -66,8 +68,12 @@
 }
 
 select{
-  font-size: large;
   padding: 10px 5px;
   border-left: none;
   border-right: none;
+  font-size: medium;
+}
+
+.filter > p{
+  font-size: large;
 }

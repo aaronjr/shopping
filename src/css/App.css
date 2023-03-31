@@ -23,7 +23,10 @@
   min-height: 38vh;
   align-self: center;
   background-color: white;
-      margin: 20px 0px
+  margin: 20px 0px;
+  justify-content: center;
+  align-items: center;
+        
 }
 .heroMain
 {

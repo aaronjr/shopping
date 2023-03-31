@@ -1,0 +1,115 @@
+.navbar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top: 100px;
+  background-color: rgb(252, 252, 252);
+  
+}
+.logoHolder{
+  background-color: rgb(252, 252, 252);;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+}
+.nav-list{
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+
+.list-item{
+  list-style-type: none;
+  font-size: x-large;
+  font-weight: 600;
+  color: #354147;
+}
+
+a{
+  text-decoration: none;
+}
+a:visited{
+  color: #354147;
+}
+
+.footer{
+  background-color: rgb(252, 252, 252);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.list{
+  margin: 30px;
+  margin-top: 50px;
+  display: flex;
+  /* gap:30px; */
+}
+
+.footer-item{
+  list-style-type: none;
+}
+
+.footer-item:hover{
+  cursor: pointer;
+  color: rgb(77, 101, 140);
+}
+
+.act, 
+.cert{
+  background-color: #354147;
+  height: 50px;
+  padding: 10px
+}
+
+.otherLogos{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.basketIcon{
+  position: relative;
+}
+
+.amount{
+  position: absolute;
+  min-height: 18.5px;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  bottom: -5px;
+  right: -12px;
+  border: none;
+  border-radius: 50%;
+  background-color: #354147;
+  color: white;
+  font-size: medium;
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (max-width: 450px)
+{
+  .list
+  {
+    margin: 30px;
+    /* margin-top: 50px; */
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .footer-item{
+        font-size: small;
+  }
+
+ 
+}

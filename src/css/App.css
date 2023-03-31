@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Domine', serif;
+  color: #354147;
+}
+
+#root
+{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(244, 244, 244);
+}
+
+.logo{
+  margin: 15px;
+}
+.main
+{
+  min-height: 38vh;
+  align-self: center;
+  background-color: white;
+      margin: 20px 0px
+}
+.heroMain
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+  margin-bottom: 3rem;
+}
+
+.textHolderMain{
+  width: 100%;
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #354147;
+  justify-self: flex-end;
+}
+
+.headerMain{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.interior
+{
+  width: 100%;
+  align-self: center;
+}
+
+.textHolderMain p
+{
+  display: flex;
+  align-self: center;
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: small;
+}
+
+.buttonHolder{
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.button{
+  display: grid;
+  place-items: center;
+  color: #354147;
+  background-color: white;
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: .5rem;
+}
+
+.mainIconHolder{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin:15px 25px ;
+}
+.iconEach{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iconEach h5
+{
+  font-size: large;
+  margin-top: 10px;
+  text-align: center;
+}
+.iconEach p {
+  font-size: small;
+  margin-top: 10px;
+  text-align: center;
+}
+.iconsMain
+{
+  width: 50px;
+}
+
+@media screen and (max-width: 450px)
+{
+  .textHolderMain>p
+  {
+    display: none;
+  }
+
+  .headerMain
+  {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0px;
+    padding: 5px;
+    width: 100%;
+    align-self: center;
+    overflow-wrap: normal;
+  }
+    .button
+    {
+      font-size: small;
+      padding: 5px 10px;
+      text-align: center;
+      width: 80px;
+      height: 25px;
+    }
+
+    .list{
+      margin: 30px;
+      /* margin-top: 50px; */
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+}

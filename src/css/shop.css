@@ -11,20 +11,24 @@
 }
 
 .header{
+  font-size: large;
   text-align: center;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .colours{
-  width: 200px;
+  width: 90%
+  ;
 }
 
 .colourHolder{
+  width: 95%;
   display: grid;
   justify-content: center;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  gap: 20px;
+  column-gap: 10px;
+  grid-template-columns: repeat(auto-fit, clamp(100px, 180px, 200px));
   grid-auto-rows: 1fr;
   padding-bottom: 20px;
 }
@@ -37,7 +41,7 @@
 .colourItem{
   font-family: 'IBM Plex Mono', monospace;
   justify-self: flex-start;
-  margin: 10px 10px 0px calc((100% - 200px) / 2);
+  margin: 5px 10px 0px 5px;
 }
 
 .hero{
@@ -76,4 +80,23 @@ select{
 
 .filter > p{
   font-size: large;
+}
+
+@media screen and (min-width:550px) {
+  .textHolder{
+      justify-self: center;
+      max-width: 400px;
+    }
+}
+
+@media screen and (min-width:750px)
+{
+  .header{
+    font-size: xx-large;
+  }
+
+  .textHolder p
+  {
+   font-size: large;
+  }
 }

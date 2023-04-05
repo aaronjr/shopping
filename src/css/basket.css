@@ -16,7 +16,7 @@
     align-self: center;
   padding: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 4fr .5fr;
+  grid-template-columns: 1fr 1fr 2fr .5fr;
   align-items: center;
   /* border-top: dashed rgb(129, 129, 129) 2px; */
   border-bottom: dashed rgb(129, 129, 129) 2px;
@@ -27,7 +27,7 @@
 }
 
 .basketImg{
-  width: 100px
+  width: 90px
 }
 
 .basketDetails{
@@ -120,7 +120,8 @@
   display: flex;
   flex-direction: column;
   padding: 60px 0px;
-      
+  margin: 0px 20px;
+  margin-bottom: 10px;
 }
 
 .emptyBasketImage{

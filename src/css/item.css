@@ -60,11 +60,29 @@
 }
 
 .itemImage{
-  width: 300px;
+  width: 60%;
 }
 
 .itemImageHolder{
   display: grid;
   place-items: center;
   margin-top: 30px;
+}
+
+@media screen and (min-width: 550px)
+{
+  .itemDetails{
+    justify-self: flex-start;
+    max-width: 600px;
+  }
+}
+@media screen and (min-width: 950px) {
+  .item{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .itemImage{
+    width: 350px;
+  }
+  
 }

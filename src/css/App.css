@@ -205,7 +205,11 @@ display: flex;
 @media screen and (min-width: 575px)
 {
   .main{
-    width: clamp(575px, 90%, 1000px) ;}
+    width: clamp(575px, 90%, 1000px) ;
+  }
+  .iconEach p{
+    font-size: medium;
+  }
 }
 
 @media screen and (min-width: 700px)
@@ -241,5 +245,6 @@ display: flex;
   .textHolderMain p
   {
     font-size: medium;
+    line-height: 1.1;
   }
 }

@@ -3,10 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 0px;
+  padding: 30px 10px;
 }
 
 .confTitle{
+  font-size: xx-large;
   margin: 40px;
 }
 

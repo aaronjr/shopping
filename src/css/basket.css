@@ -163,8 +163,13 @@
 
 @media screen and (min-width: 900px)
 {
+  .purchase{
+    padding-top: 0px;
+  }
+
   .basketFull
     {
       grid-template-columns: 1fr 1fr;
+      padding-bottom: 30px;
     }
 }

@@ -74,11 +74,16 @@
   .itemDetails{
     justify-self: flex-start;
     max-width: 600px;
+    grid-template-rows: 1fr .5fr 2.5fr 1.5fr 4fr;
   }
 }
 @media screen and (min-width: 950px) {
   .item{
     grid-template-columns: 1fr 1fr;
+  }
+
+  .itemDetails{
+    grid-template-rows: 1fr .5fr 3fr 1.5fr 4fr;
   }
 
   .itemImage{

@@ -15,7 +15,7 @@ const Nav = (props) => {
           <Link to={"/"}>Home</Link>
         </li>
         <li className="list-item">
-          <Link to={"/Shop"}>Shop</Link>
+          <Link to={"/shop"}>Shop</Link>
         </li>
         <li className="list-item basketIcon">
           <Link to={"/Basket"}>

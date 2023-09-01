@@ -30,7 +30,7 @@ const Shop = (props) => {
       <div className="colourHolder">
         {props.colours.map((colour) => {
           return (
-            <Link to={`/Shop/${colour.id}`} key={colour.id}>
+            <Link to={`/shop/${colour.id}`} key={colour.id}>
               <div className="square">
                 <img className="colours" src={colour.src} alt={colour.name} />
                 <p className="colourItem">{colour.name}</p>

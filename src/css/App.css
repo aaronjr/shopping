@@ -247,4 +247,7 @@ display: flex;
     font-size: medium;
     line-height: 1.1;
   }
+  .mainIconHolder{
+    width: auto;
+  }
 }
